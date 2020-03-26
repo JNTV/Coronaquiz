@@ -16,3 +16,4 @@ C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Debug\Quiz.Properties.R
 C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Debug\Quiz.csproj.GenerateResource.cache
 C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Debug\Quiz.exe
 C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Debug\Quiz.pdb
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Debug\Quiz.frmName.resources
