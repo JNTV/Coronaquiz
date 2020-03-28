@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblFrage = new System.Windows.Forms.Label();
             this.cmdAntwortA = new System.Windows.Forms.Button();
             this.cmdAntwortC = new System.Windows.Forms.Button();
@@ -39,9 +40,9 @@
             this.lblZeit = new System.Windows.Forms.Label();
             this.lvwLeaderboard = new System.Windows.Forms.ListView();
             this.Platz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.spieler = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Punktzahl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.grbFrage = new System.Windows.Forms.GroupBox();
             this.cmdNeu = new System.Windows.Forms.Button();
             this.grbHauptmenue = new System.Windows.Forms.GroupBox();
@@ -67,6 +68,7 @@
             // 
             // cmdAntwortA
             // 
+            this.cmdAntwortA.BackColor = System.Drawing.Color.White;
             this.cmdAntwortA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmdAntwortA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAntwortA.Location = new System.Drawing.Point(85, 201);
@@ -74,11 +76,12 @@
             this.cmdAntwortA.Size = new System.Drawing.Size(340, 151);
             this.cmdAntwortA.TabIndex = 1;
             this.cmdAntwortA.Text = "Antwort A";
-            this.cmdAntwortA.UseVisualStyleBackColor = true;
+            this.cmdAntwortA.UseVisualStyleBackColor = false;
             this.cmdAntwortA.Click += new System.EventHandler(this.cmdAntwortA_Click);
             // 
             // cmdAntwortC
             // 
+            this.cmdAntwortC.BackColor = System.Drawing.Color.White;
             this.cmdAntwortC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmdAntwortC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAntwortC.Location = new System.Drawing.Point(85, 358);
@@ -86,11 +89,12 @@
             this.cmdAntwortC.Size = new System.Drawing.Size(340, 151);
             this.cmdAntwortC.TabIndex = 5;
             this.cmdAntwortC.Text = "Antwort C";
-            this.cmdAntwortC.UseVisualStyleBackColor = true;
+            this.cmdAntwortC.UseVisualStyleBackColor = false;
             this.cmdAntwortC.Click += new System.EventHandler(this.cmdAntwortC_Click);
             // 
             // cmdAntwortB
             // 
+            this.cmdAntwortB.BackColor = System.Drawing.Color.White;
             this.cmdAntwortB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmdAntwortB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAntwortB.Location = new System.Drawing.Point(445, 201);
@@ -98,11 +102,12 @@
             this.cmdAntwortB.Size = new System.Drawing.Size(340, 151);
             this.cmdAntwortB.TabIndex = 6;
             this.cmdAntwortB.Text = "Antwort B";
-            this.cmdAntwortB.UseVisualStyleBackColor = true;
+            this.cmdAntwortB.UseVisualStyleBackColor = false;
             this.cmdAntwortB.Click += new System.EventHandler(this.cmdAntwortB_Click);
             // 
             // cmdAntwortD
             // 
+            this.cmdAntwortD.BackColor = System.Drawing.Color.White;
             this.cmdAntwortD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmdAntwortD.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAntwortD.Location = new System.Drawing.Point(445, 358);
@@ -110,7 +115,7 @@
             this.cmdAntwortD.Size = new System.Drawing.Size(340, 151);
             this.cmdAntwortD.TabIndex = 7;
             this.cmdAntwortD.Text = "Antwort D";
-            this.cmdAntwortD.UseVisualStyleBackColor = true;
+            this.cmdAntwortD.UseVisualStyleBackColor = false;
             this.cmdAntwortD.Click += new System.EventHandler(this.cmdAntwortD_Click);
             // 
             // prgZeit
@@ -141,11 +146,12 @@
             // 
             // lvwLeaderboard
             // 
+            this.lvwLeaderboard.BackColor = System.Drawing.Color.Yellow;
             this.lvwLeaderboard.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Platz,
-            this.spieler,
-            this.Punktzahl,
-            this.columnHeader1});
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
             this.lvwLeaderboard.HideSelection = false;
             this.lvwLeaderboard.Location = new System.Drawing.Point(6, 515);
             this.lvwLeaderboard.Name = "lvwLeaderboard";
@@ -159,23 +165,23 @@
             this.Platz.Text = "Platz";
             this.Platz.Width = 40;
             // 
-            // spieler
+            // columnHeader2
             // 
-            this.spieler.Name = "Form1";
-            this.spieler.Text = "Name";
-            this.spieler.Width = 200;
+            this.columnHeader2.Text = "Name";
+            this.columnHeader2.Width = 187;
             // 
-            // Punktzahl
+            // columnHeader3
             // 
-            this.Punktzahl.Text = "Punktzahl";
+            this.columnHeader3.Text = "Punktzahl";
             // 
-            // columnHeader1
+            // columnHeader4
             // 
-            this.columnHeader1.Text = "Thema";
-            this.columnHeader1.Width = 74;
+            this.columnHeader4.Text = "Thema";
+            this.columnHeader4.Width = 86;
             // 
             // grbFrage
             // 
+            this.grbFrage.BackColor = System.Drawing.Color.Transparent;
             this.grbFrage.Controls.Add(this.cmdNeu);
             this.grbFrage.Controls.Add(this.lblZeit);
             this.grbFrage.Controls.Add(this.lvwLeaderboard);
@@ -185,7 +191,7 @@
             this.grbFrage.Controls.Add(this.cmdAntwortC);
             this.grbFrage.Controls.Add(this.cmdAntwortB);
             this.grbFrage.Controls.Add(this.cmdAntwortD);
-            this.grbFrage.Location = new System.Drawing.Point(12, 12);
+            this.grbFrage.Location = new System.Drawing.Point(6, 6);
             this.grbFrage.Name = "grbFrage";
             this.grbFrage.Size = new System.Drawing.Size(895, 609);
             this.grbFrage.TabIndex = 12;
@@ -194,6 +200,7 @@
             // 
             // cmdNeu
             // 
+            this.cmdNeu.BackColor = System.Drawing.Color.White;
             this.cmdNeu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmdNeu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdNeu.Location = new System.Drawing.Point(743, 554);
@@ -202,11 +209,12 @@
             this.cmdNeu.Size = new System.Drawing.Size(146, 49);
             this.cmdNeu.TabIndex = 12;
             this.cmdNeu.Text = "Hauptmenü";
-            this.cmdNeu.UseVisualStyleBackColor = true;
+            this.cmdNeu.UseVisualStyleBackColor = false;
             this.cmdNeu.Click += new System.EventHandler(this.cmdNeu_Click);
             // 
             // grbHauptmenue
             // 
+            this.grbHauptmenue.BackColor = System.Drawing.Color.Transparent;
             this.grbHauptmenue.Controls.Add(this.cmdLGBTQ);
             this.grbHauptmenue.Controls.Add(this.cmdFeminismus);
             this.grbHauptmenue.Controls.Add(this.cmdCorona);
@@ -220,6 +228,7 @@
             // 
             // cmdLGBTQ
             // 
+            this.cmdLGBTQ.BackColor = System.Drawing.Color.White;
             this.cmdLGBTQ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdLGBTQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdLGBTQ.Location = new System.Drawing.Point(313, 415);
@@ -227,11 +236,12 @@
             this.cmdLGBTQ.Size = new System.Drawing.Size(274, 109);
             this.cmdLGBTQ.TabIndex = 4;
             this.cmdLGBTQ.Text = "LGBTQ*";
-            this.cmdLGBTQ.UseVisualStyleBackColor = true;
+            this.cmdLGBTQ.UseVisualStyleBackColor = false;
             this.cmdLGBTQ.Click += new System.EventHandler(this.cmdLGBTQ_Click);
             // 
             // cmdFeminismus
             // 
+            this.cmdFeminismus.BackColor = System.Drawing.Color.White;
             this.cmdFeminismus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdFeminismus.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdFeminismus.Location = new System.Drawing.Point(313, 300);
@@ -239,11 +249,12 @@
             this.cmdFeminismus.Size = new System.Drawing.Size(274, 109);
             this.cmdFeminismus.TabIndex = 3;
             this.cmdFeminismus.Text = "Feminismus";
-            this.cmdFeminismus.UseVisualStyleBackColor = true;
+            this.cmdFeminismus.UseVisualStyleBackColor = false;
             this.cmdFeminismus.Click += new System.EventHandler(this.cmdFeminismus_Click);
             // 
             // cmdCorona
             // 
+            this.cmdCorona.BackColor = System.Drawing.Color.White;
             this.cmdCorona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdCorona.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCorona.Location = new System.Drawing.Point(313, 185);
@@ -251,7 +262,7 @@
             this.cmdCorona.Size = new System.Drawing.Size(274, 109);
             this.cmdCorona.TabIndex = 2;
             this.cmdCorona.Text = "Corona";
-            this.cmdCorona.UseVisualStyleBackColor = true;
+            this.cmdCorona.UseVisualStyleBackColor = false;
             this.cmdCorona.Click += new System.EventHandler(this.cmdCorona_Click);
             // 
             // label2
@@ -279,11 +290,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(919, 633);
             this.Controls.Add(this.grbFrage);
             this.Controls.Add(this.grbHauptmenue);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Quiz-Champion";
             this.grbFrage.ResumeLayout(false);
             this.grbHauptmenue.ResumeLayout(false);
             this.grbHauptmenue.PerformLayout();
@@ -311,9 +325,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button cmdNeu;
         private System.Windows.Forms.ColumnHeader Platz;
-        private System.Windows.Forms.ColumnHeader spieler;
-        private System.Windows.Forms.ColumnHeader Punktzahl;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
 
