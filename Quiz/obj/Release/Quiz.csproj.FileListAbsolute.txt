@@ -1,0 +1,13 @@
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\bin\Release\Quiz.exe.config
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\bin\Release\Quiz.exe
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\bin\Release\Quiz.pdb
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Release\Quiz.Form1.resources
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Release\Quiz.frmName.resources
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Release\Quiz.Properties.Resources.resources
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Release\Quiz.csproj.GenerateResource.cache
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Release\Quiz.exe
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Release\Quiz.pdb
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\bin\Release\Quiz.exe.manifest
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\bin\Release\Quiz.application
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Release\Quiz.exe.manifest
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Release\Quiz.application
