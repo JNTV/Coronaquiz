@@ -52,7 +52,7 @@ namespace Quiz
                 {
                     for (int j = 1; j <= i; j++)
                     {
-                        if (Convert.ToInt32(leaderboardGetrennt[1, j - 1]) > Convert.ToInt32(leaderboardGetrennt[1, j]))
+                        if (Convert.ToInt32(leaderboardGetrennt[1, j - 1]) < Convert.ToInt32(leaderboardGetrennt[1, j]))
                         {
                             string temp1 = leaderboardGetrennt[0, j];
                             int temp2 = Convert.ToInt32(leaderboardGetrennt[1, j]);

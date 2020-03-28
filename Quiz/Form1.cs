@@ -24,7 +24,7 @@ namespace Quiz
         {
             InitializeComponent();
             SpielerPunktzahl = 0;
-            AktualisiereLeaderboard();
+            AenderungenImplementieren();
 
         }
 
@@ -200,7 +200,7 @@ namespace Quiz
         /// <summary>
         /// Leaderboard wird erstellt und die ersten 3 Plätze ins ListView-Object geladen
         /// </summary>
-        public void AktualisiereLeaderboard()
+        public void AenderungenImplementieren()
         {
             aktuellesLeaderboard = new Leaderboard();
             if (aktuellesLeaderboard.GetLeaderboardGroeße() < 3)
@@ -223,6 +223,7 @@ namespace Quiz
                     leaderboard[i].SubItems.Add(platzierung[0]);
                     leaderboard[i].SubItems.Add(platzierung[1]);
                     leaderboard[i].SubItems.Add(platzierung[2]);
+                    this.lvwLeaderboard.Items.Add(leaderboard[i]);
                 }
             }
         }
@@ -248,6 +249,7 @@ namespace Quiz
         public void Leaderboardaktualisieren()
         {
             aktuellesLeaderboard.LeaderboardAktualisieren(spielername, SpielerPunktzahl,aktuelleRunde.getThema());
+            AenderungenImplementieren();
         }
 
         /// <summary>
