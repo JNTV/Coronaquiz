@@ -38,6 +38,10 @@
             this.tmrZeit = new System.Windows.Forms.Timer(this.components);
             this.lblZeit = new System.Windows.Forms.Label();
             this.lvwLeaderboard = new System.Windows.Forms.ListView();
+            this.Platz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.spieler = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Punktzahl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.grbFrage = new System.Windows.Forms.GroupBox();
             this.cmdNeu = new System.Windows.Forms.Button();
             this.grbHauptmenue = new System.Windows.Forms.GroupBox();
@@ -46,9 +50,6 @@
             this.cmdCorona = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Platz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Punktzahl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.grbFrage.SuspendLayout();
             this.grbHauptmenue.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             // lblFrage
             // 
             this.lblFrage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblFrage.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFrage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFrage.Location = new System.Drawing.Point(85, 74);
             this.lblFrage.Name = "lblFrage";
             this.lblFrage.Size = new System.Drawing.Size(700, 108);
@@ -67,7 +68,7 @@
             // cmdAntwortA
             // 
             this.cmdAntwortA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmdAntwortA.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAntwortA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAntwortA.Location = new System.Drawing.Point(85, 201);
             this.cmdAntwortA.Name = "cmdAntwortA";
             this.cmdAntwortA.Size = new System.Drawing.Size(340, 151);
@@ -79,7 +80,7 @@
             // cmdAntwortC
             // 
             this.cmdAntwortC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmdAntwortC.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAntwortC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAntwortC.Location = new System.Drawing.Point(85, 358);
             this.cmdAntwortC.Name = "cmdAntwortC";
             this.cmdAntwortC.Size = new System.Drawing.Size(340, 151);
@@ -91,7 +92,7 @@
             // cmdAntwortB
             // 
             this.cmdAntwortB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmdAntwortB.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAntwortB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAntwortB.Location = new System.Drawing.Point(445, 201);
             this.cmdAntwortB.Name = "cmdAntwortB";
             this.cmdAntwortB.Size = new System.Drawing.Size(340, 151);
@@ -103,7 +104,7 @@
             // cmdAntwortD
             // 
             this.cmdAntwortD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmdAntwortD.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAntwortD.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAntwortD.Location = new System.Drawing.Point(445, 358);
             this.cmdAntwortD.Name = "cmdAntwortD";
             this.cmdAntwortD.Size = new System.Drawing.Size(340, 151);
@@ -115,10 +116,11 @@
             // prgZeit
             // 
             this.prgZeit.Location = new System.Drawing.Point(85, 48);
+            this.prgZeit.Maximum = 2000;
             this.prgZeit.Name = "prgZeit";
             this.prgZeit.Size = new System.Drawing.Size(700, 23);
             this.prgZeit.TabIndex = 8;
-            this.prgZeit.Value = 50;
+            this.prgZeit.Value = 2000;
             // 
             // tmrZeit
             // 
@@ -141,15 +143,36 @@
             // 
             this.lvwLeaderboard.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Platz,
-            this.Name,
-            this.Punktzahl});
+            this.spieler,
+            this.Punktzahl,
+            this.columnHeader1});
             this.lvwLeaderboard.HideSelection = false;
             this.lvwLeaderboard.Location = new System.Drawing.Point(6, 515);
             this.lvwLeaderboard.Name = "lvwLeaderboard";
-            this.lvwLeaderboard.Size = new System.Drawing.Size(310, 88);
+            this.lvwLeaderboard.Size = new System.Drawing.Size(381, 88);
             this.lvwLeaderboard.TabIndex = 11;
             this.lvwLeaderboard.UseCompatibleStateImageBehavior = false;
             this.lvwLeaderboard.View = System.Windows.Forms.View.Details;
+            // 
+            // Platz
+            // 
+            this.Platz.Text = "Platz";
+            this.Platz.Width = 40;
+            // 
+            // spieler
+            // 
+            this.spieler.Name = "Form1";
+            this.spieler.Text = "Name";
+            this.spieler.Width = 200;
+            // 
+            // Punktzahl
+            // 
+            this.Punktzahl.Text = "Punktzahl";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Thema";
+            this.columnHeader1.Width = 74;
             // 
             // grbFrage
             // 
@@ -180,6 +203,7 @@
             this.cmdNeu.TabIndex = 12;
             this.cmdNeu.Text = "Hauptmenü";
             this.cmdNeu.UseVisualStyleBackColor = true;
+            this.cmdNeu.Click += new System.EventHandler(this.cmdNeu_Click);
             // 
             // grbHauptmenue
             // 
@@ -251,20 +275,6 @@
             this.label1.Text = "Willkommen beim Quiz";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Platz
-            // 
-            this.Platz.Text = "Platz";
-            this.Platz.Width = 40;
-            // 
-            // Name
-            // 
-            this.Name.Text = "Name";
-            this.Name.Width = 200;
-            // 
-            // Punktzahl
-            // 
-            this.Punktzahl.Text = "Punktzahl";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,7 +282,7 @@
             this.ClientSize = new System.Drawing.Size(919, 633);
             this.Controls.Add(this.grbFrage);
             this.Controls.Add(this.grbHauptmenue);
-            this.Name.Name = "Form1";
+            this.Name = "Form1";
             this.Text = "Form1";
             this.grbFrage.ResumeLayout(false);
             this.grbHauptmenue.ResumeLayout(false);
@@ -301,8 +311,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button cmdNeu;
         private System.Windows.Forms.ColumnHeader Platz;
-        private System.Windows.Forms.ColumnHeader Name;
+        private System.Windows.Forms.ColumnHeader spieler;
         private System.Windows.Forms.ColumnHeader Punktzahl;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
 

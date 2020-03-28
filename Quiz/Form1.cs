@@ -18,14 +18,13 @@ namespace Quiz
         private Quiz aktuelleRunde = new Quiz();
         private int SpielerPunktzahl { get; set; }
         private int zeit = 2000;
-        private Leaderboard aktuellesLeaderboard = new Leaderboard();
+        private Leaderboard aktuellesLeaderboard;
         private ListViewItem[] leaderboard = new ListViewItem[3];
-        private int Platzierung { get; set; } 
         public Form1()
         {
             InitializeComponent();
             SpielerPunktzahl = 0;
-            InitialisiereLeaderboard();
+            AktualisiereLeaderboard();
 
         }
 
@@ -108,13 +107,14 @@ namespace Quiz
             prgZeit.Value--;
 
             //Zeitanzeige wird aktualisiert
-            lblZeit.Text = ("Noch " + (zeit - 100) + "Sekunden");
+            lblZeit.Text = ("Noch " + (zeit / 100) + " Sekunden");
 
             //Zeitablauf wird überprüft
             if (zeit==0)
             {
+                tmrZeit.Enabled = false;
                 //Alertfenster wird geöffnet und Nutzer wird darauf aufmerksam gemacht, dass die Zeit zu Ende ist
-                MessageBox.Show("Leider zu langsam ;)");
+                MessageBox.Show("Leider zu langsam ;)" + Environment.NewLine + "Die Richtige Antwort war:" + Environment.NewLine + aktuelleFrage[5]);
 
                 //Nächste Frage wird aufgedeckt
                 NaechsteFrage();
@@ -127,6 +127,7 @@ namespace Quiz
         /// <param name="antwort">abgegebene Antwort</param>
         public void CheckAnswer(char antwort)
         {
+            tmrZeit.Enabled = false;
             //Die richtige Antwort wird mit der abgegebenen 
             if (antwort == Convert.ToChar(aktuelleFrage[5]))
             {
@@ -134,10 +135,26 @@ namespace Quiz
                 MessageBox.Show("Richtige Antwort!");
                 SpielerPunktzahl += 10;
             }
-            else
+            else if (Convert.ToChar(aktuelleFrage[5]) == 'A')
             {
-                //Antwort war falsch und Spieler bekommt keine Punkte
-                MessageBox.Show("Leider die falsche Antwort!");
+                MessageBox.Show("Leider die falsche Antwort!" + Environment.NewLine + "Die richtige Antwort war: " + Environment.NewLine + cmdAntwortA.Text);
+            }
+            else if (Convert.ToChar(aktuelleFrage[5]) == 'B')
+            {
+                MessageBox.Show("Leider die falsche Antwort!" + Environment.NewLine + "Die richtige Antwort war: " + Environment.NewLine + cmdAntwortB.Text);
+            }
+            else if (Convert.ToChar(aktuelleFrage[5]) == 'C')
+            {
+                MessageBox.Show("Leider die falsche Antwort!" + Environment.NewLine + "Die richtige Antwort war: " + Environment.NewLine + cmdAntwortC.Text);
+            }
+            else if (Convert.ToChar(aktuelleFrage[5]) == 'D')
+            {
+                MessageBox.Show("Leider die falsche Antwort!" + Environment.NewLine + "Die richtige Antwort war: " + Environment.NewLine + cmdAntwortD.Text);
+            }
+            else if (Convert.ToChar(aktuelleFrage[5]) == 'E')
+            {
+                MessageBox.Show("Alle Antworten sind richtig!!!!");
+                SpielerPunktzahl += 10;
             }
 
             //Nächste Frage wird aufgedeckt
@@ -162,6 +179,7 @@ namespace Quiz
                 //
                 //
                 zeit = 2000;
+                prgZeit.Value = 2000;
                 aktuelleFrage = aktuelleRunde.getNaechsteFrage();
                 lblFrage.Text = aktuelleFrage[0];
                 cmdAntwortA.Text = aktuelleFrage[1];
@@ -169,28 +187,31 @@ namespace Quiz
                 cmdAntwortC.Text = aktuelleFrage[3];
                 cmdAntwortD.Text = aktuelleFrage[4];
                 aktuelleRunde.frage++;
+                tmrZeit.Enabled = true;
             }
             else
             {
                 //Runde wird beendet
                 BeendeRunde();
             }
+            
         }
 
         /// <summary>
-        /// Liederboard wird erstellt und die ersten 3 Plätze ins ListView-Object geladen
+        /// Leaderboard wird erstellt und die ersten 3 Plätze ins ListView-Object geladen
         /// </summary>
-        public void InitialisiereLeaderboard()
+        public void AktualisiereLeaderboard()
         {
-            Platzierung = 0;
+            aktuellesLeaderboard = new Leaderboard();
             if (aktuellesLeaderboard.GetLeaderboardGroeße() < 3)
             {
                 for (int i = 0; i < aktuellesLeaderboard.GetLeaderboardGroeße(); i++)
                 {
-                    string[] platzierung = aktuellesLeaderboard.GetPlatzierung(i);
-                    leaderboard[i] = new ListViewItem(Convert.ToString(i + 1));
-                    leaderboard[i].SubItems.Add(platzierung[0]);
-                    leaderboard[i].SubItems.Add(platzierung[1]);
+                    //string[] platzierung = aktuellesLeaderboard.GetPlatzierung(i);
+                    //leaderboard[i] = new ListViewItem(Convert.ToString(i + 1));
+                    //leaderboard[i].SubItems.Add(platzierung[0]);
+                    //leaderboard[i].SubItems.Add(platzierung[1]);
+                    //leaderboard[i].SubItems.Add(platzierung[2]);
                 }                
             }
             else
@@ -201,25 +222,37 @@ namespace Quiz
                     leaderboard[i] = new ListViewItem(Convert.ToString(i + 1));
                     leaderboard[i].SubItems.Add(platzierung[0]);
                     leaderboard[i].SubItems.Add(platzierung[1]);
+                    leaderboard[i].SubItems.Add(platzierung[2]);
                 }
             }
         }
 
         /// <summary>
-        /// Runde wird beendet
+        /// Runde wird beendet und Programm zurückgesetzt
         /// </summary>
         public void BeendeRunde()
         {
+            MessageBox.Show("Das Spiel ist vorbei. Du hast " + SpielerPunktzahl + " Punkte gemacht!");
+            ShowMyDialogBox();
+
             //Leaderboard wird aktualisiert
             Leaderboardaktualisieren();
+            grbHauptmenue.Visible = true;
+            grbFrage.Visible = false;
+            SpielerPunktzahl = 0;
         }
+
         /// <summary>
         /// Leaderboard wird aktualisiert
         /// </summary>
         public void Leaderboardaktualisieren()
         {
-
+            aktuellesLeaderboard.LeaderboardAktualisieren(spielername, SpielerPunktzahl,aktuelleRunde.getThema());
         }
+
+        /// <summary>
+        /// Spielername wird abgefragt
+        /// </summary>
         public void ShowMyDialogBox()
         {
             frmName testDialog = new frmName();
@@ -232,9 +265,16 @@ namespace Quiz
             }
             else
             {
-                this.spielername = "Cancelled";
+                this.spielername = "";
             }
             testDialog.Dispose();
+        }
+
+        private void cmdNeu_Click(object sender, EventArgs e)
+        {
+            grbHauptmenue.Visible = true;
+            grbFrage.Visible = false;
+            SpielerPunktzahl = 0;
         }
     }
 }

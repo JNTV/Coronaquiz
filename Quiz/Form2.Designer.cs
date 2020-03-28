@@ -34,6 +34,7 @@
             // 
             // cmdAbsenden
             // 
+            this.cmdAbsenden.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.cmdAbsenden.Location = new System.Drawing.Point(235, 12);
             this.cmdAbsenden.Name = "cmdAbsenden";
             this.cmdAbsenden.Size = new System.Drawing.Size(75, 23);
@@ -50,6 +51,7 @@
             // 
             // frmName
             // 
+            this.AcceptButton = this.cmdAbsenden;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 48);

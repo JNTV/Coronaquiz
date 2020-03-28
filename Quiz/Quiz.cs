@@ -10,11 +10,11 @@ namespace Quiz
     class Quiz
     {
         private string Thema { get; set; }
-        public string[] Fragekatalog { get; set; }
+        public string[] Fragekatalog;
         public int frage = 0;
         FileStream strom;
         StreamReader lesen;
-        public int zaehler = 0; 
+        public int zaehler; 
 
         public Quiz ()
         {
@@ -22,6 +22,8 @@ namespace Quiz
         }
         public void SetThema(string thema)
         {
+            zaehler = 0;
+            Fragekatalog = new string[10];
             this.Thema = (thema);
             switch (thema)
             {
@@ -37,7 +39,7 @@ namespace Quiz
                 default:
                     break;
             }
-            lesen = new StreamReader(strom);
+            lesen = new StreamReader(strom, Encoding.Default);
             lesen.ReadLine();
             while (lesen.Peek() != -1)
             {
@@ -45,11 +47,17 @@ namespace Quiz
                 zaehler++;
             }
             lesen.Close();
+            frage = 0;
         }
 
         public string[] getNaechsteFrage()
         {
             return Fragekatalog[frage].Split(';');
+        }
+
+        public string getThema()
+        {
+            return Thema;
         }
     }
 }
