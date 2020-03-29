@@ -11,3 +11,4 @@ C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\bin\Release\Quiz.exe.manife
 C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\bin\Release\Quiz.application
 C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Release\Quiz.exe.manifest
 C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Release\Quiz.application
+C:\Users\Jan-Niklas\Documents\GitHub\Coronaquiz\Quiz\obj\Release\Quiz.csprojAssemblyReference.cache

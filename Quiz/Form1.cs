@@ -218,6 +218,7 @@ namespace Quiz
             {
                 for (int i = 0; i < 3; i++)
                 {
+                    //Leaderboarditems werden erstellt und zum Leaderboard hinzugefügt
                     string[] platzierung = aktuellesLeaderboard.GetPlatzierung(i);
                     leaderboard[i] = new ListViewItem(Convert.ToString(i + 1));
                     leaderboard[i].SubItems.Add(platzierung[0]);
@@ -272,6 +273,7 @@ namespace Quiz
             testDialog.Dispose();
         }
 
+        //Spiel wird neugestartet. Der Spieler sieht wieder das Hauptmenü
         private void cmdNeu_Click(object sender, EventArgs e)
         {
             grbHauptmenue.Visible = true;

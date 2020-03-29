@@ -11,50 +11,56 @@ namespace Quiz
     {
         private string Thema { get; set; }
         public string[] Fragekatalog;
-        public int frage = 0;
-        FileStream strom;
-        StreamReader lesen;
-        public int zaehler; 
+        public int frage;
 
+
+        /// <summary>
+        /// Quiz-Objekt wird erstellt
+        /// </summary>
         public Quiz ()
         {
             
         }
+
+        /// <summary>
+        /// Das Thema des Quizzes wird gesetzt
+        /// </summary>
+        /// <param name="thema"></param>
         public void SetThema(string thema)
         {
-            zaehler = 0;
-            Fragekatalog = new string[10];
+            //Der aktuelle Fragenzähler wird zurückgesetzt (Damit das Quiz bei der ersten Frage anfängt)
+            //Und das jeweilige Quiz wird aus der Datei geladen
             this.Thema = (thema);
             switch (thema)
             {
                 case "Corona":
-                    strom = new FileStream("Corona Quiz.csv", FileMode.Open, FileAccess.Read);
+                    Fragekatalog = File.ReadAllLines("Corona Quiz.csv", Encoding.Default);
                     break;
                 case "Feminismus":
-                    strom = new FileStream("Feminismus Quiz.csv", FileMode.Open, FileAccess.Read);
+                    Fragekatalog = File.ReadAllLines("Feminismus Quiz.csv", Encoding.Default);
                     break;
                 case "LGBTQ":
-                    strom = new FileStream("LGBTQ_ Quiz.csv", FileMode.Open, FileAccess.Read);
+                    Fragekatalog = File.ReadAllLines("LGBTQ_ Quiz.csv", Encoding.Default);
                     break;
                 default:
                     break;
             }
-            lesen = new StreamReader(strom, Encoding.Default);
-            lesen.ReadLine();
-            while (lesen.Peek() != -1)
-            {
-                Fragekatalog[zaehler] = lesen.ReadLine();
-                zaehler++;
-            }
-            lesen.Close();
-            frage = 0;
+            frage = 1;
         }
 
+        /// <summary>
+        /// Die nächste Frage wird geladen
+        /// </summary>
+        /// <returns>Die nächste Frage, deren Antworten und die richtige Antwort</returns>
         public string[] getNaechsteFrage()
         {
             return Fragekatalog[frage].Split(';');
         }
 
+        /// <summary>
+        /// Das aktuell Thema wird übermittelt
+        /// </summary>
+        /// <returns>Aktuelles Thema</returns>
         public string getThema()
         {
             return Thema;
